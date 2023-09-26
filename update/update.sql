@@ -1,1 +1,1 @@
-UPDATE `hp_settings` SET `value` = 'v1.0.2' WHERE `hp_settings`.`id` = 1;
+UPDATE `hp_settings` SET `value` = 'v1.0.3' WHERE `hp_settings`.`id` = 1;

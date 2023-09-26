@@ -8,9 +8,6 @@ CREATE TABLE `sc-tafel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-INSERT INTO `sc-tafel` (`id`, `name`, `text`, `vww_url`, `licence`, `Tur`) VALUES (1, 'test', 'test', 'test', '18949', '1');
-
-
 CREATE TABLE `script_licencen` (
   `config_id` int(10) UNSIGNED ZEROFILL NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -115,7 +112,7 @@ CREATE TABLE `hp_settings` (
 --
 
 INSERT INTO `hp_settings` (`id`, `data`, `value`) VALUES
-(1, 'version', 'v1.0.2');
+(1, 'version', 'v1.0.3');
 
 --
 -- Indizes der exportierten Tabellen
