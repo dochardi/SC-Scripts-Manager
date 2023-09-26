@@ -1,5 +1,6 @@
 <?php
 include('../config.php');
+include('../lang/'.LANG.'.php');
 include('function/Parsedown.php');
 include('function/github.php');
 $adonconn=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
@@ -37,7 +38,7 @@ if($user_exist['id'])
 {
 $_SESSION['access_token']='true';
 
-}else{$error="Username or Password Wrong";}
+}else{$error=$lang['error']['login'];}
 
 
 }

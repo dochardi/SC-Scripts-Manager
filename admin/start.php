@@ -12,39 +12,19 @@ include('config.php');
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<div class="container-fluid">
-<a class="navbar-brand"><img src="../theme/logo.png" style="width: 45px;height: 45px;border-radius: 15% !important;"></a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-<li class="nav-item">
-<a class="nav-link active" aria-current="page">Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="<?=support_dc?>" target="">Support</a>
-</li>
-</ul>
-</div>
-</div>
-</nav>
 <section class="siteBanner d-flex align-items-center" id="home">
 <div class="container">
 <div class="row">
 <div class="col-md-12">
 <div class="siteBannerInner">
-<h2>Login as Admin</h2>
+<h2><?=$lang['global']['loginasadmin']?></h2>
 
 
 <?
 if(demo=="1")
 {
 ?>
-<p>This are a demo server login data are:<br>
-Username: Admin<br>
-Password: demo<br>
+<p><?=$lang['global']['demo']?>
 </p>
 <?
 }
@@ -53,14 +33,14 @@ Password: demo<br>
 <p>
 <?=$error?>
 <form action="?action=login" method="post" class="form-inline" style="width: 40%;">
-  <label for="fname" class="sr-only" style="color: #ad91ff !important;"><h5>Email or Username:</h5></label>
+  <label for="fname" class="sr-only" style="color: #ad91ff !important;"><h5><?=$lang['global']['username']?></h5></label>
   <input type="text" class="form-control mb-2 mr-sm-2" id="fname" name="fname">
 
-  <label for="lname" class="sr-only" style="color: #ad91ff !important;"><h5>Password:</h5></label>
+  <label for="lname" class="sr-only" style="color: #ad91ff !important;"><h5><?=$lang['global']['pass']?>:</h5></label>
   <input type="password"  class="form-control mb-2 mr-sm-2"id="lname" name="lname">
 
 <br><br>
-<button type="submit" class="btn btn-outline-success" >Login</button>
+<button type="submit" class="btn btn-outline-success" ><?=$lang['global']['login']?></button>
     </form>
 
 

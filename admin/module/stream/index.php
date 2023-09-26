@@ -6,18 +6,13 @@ iframe {
 
 <div class="col-md-12 col-lg-6 col-xl-7">
 <div class="bgDarkk pt-4 pb-5">
-<h6 class="text-left ctitle">INFO<small class="form-text text-muted"></small></h6>
-Wen sie "Web-php CMS" Nutzen bitte bei IP Eure Domaine zb: https://demo.de/ <br><br>
-wen sie "Laut fm" Nutzen bitte nur den Mount point setzen ohne /  zb: aus "/eins" wurde "eins"<br><br>
-wens sie "Stream by dwe gruppe" nutzen wurde der DJ name und das dj Bild von den Sonicpanel Dj Profil Abgerufen das heist sie müssen die DJ Login Profile sauber setzen, aber das durche haben sie viel einbindungs möglichkeiten
-<br><br>
-Wen sie "custom" Nutzen mussen sie in der ortner "extern/stream/function" die "custom.php" anpassen bzw den code Schreiben für die abfrage der stream infos und den html code zu anzigen
-
+<h6 class="text-left ctitle"><?=$lang['global']['info']?><small class="form-text text-muted"></small></h6>
+<?=$lang['stream']['info_text']?>
 
 
 </div>
 <div class="bgDarkk pt-4 pb-5">
-<h6 class="text-left ctitle">Settings<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['settings']?><small class="form-text text-muted"></small></h6>
 
 <?php
 $lz="18956";
@@ -68,7 +63,7 @@ socket.onopen = function(e) {
 <input type="hidden" name="lz" value="<?=$lz?>"/>
 <table style="width:100%;">
 <tr>
-<td>Stream Server:</td><td>
+<td><?=$lang['stream']['server_type']?></td><td>
 <?php 
 if($row['config_option_11']=='sonicpanel'){$status1="selected";}
 if($row['config_option_11']=='shoutcastv1'){$status2="selected";}
@@ -79,13 +74,13 @@ if($row['config_option_11']=='webphp'){$status6="selected";}
 if($row['config_option_11']=='custom'){$status7="selected";}
 ?>
   <select name="config_option_11" class="form-control">
-  <option value="sonicpanel" <?=$status1?>>Stream by dwe gruppe</option>
-  <option Value='shoutcastv1' <?=$status2?>>Shoutcast V1</option>
-  <option Value='shoutcastv2' <?=$status3?>>Shoutcast V2</option>
-  <option Value='icecast' <?=$status4?>>Icecast</option>
-  <option Value='lautfm' <?=$status5?>>lautfm</option>
-  <option Value='webphp' <?=$status6?>>Web-php CMS</option>
-  <option Value='custom' <?=$status7?>>custom</option>
+  <option value="sonicpanel" <?=$status1?>><?=$lang['stream']['1']?></option>
+  <option Value='shoutcastv1' <?=$status2?>><?=$lang['stream']['2']?></option>
+  <option Value='shoutcastv2' <?=$status3?>><?=$lang['stream']['3']?></option>
+  <option Value='icecast' <?=$status4?>><?=$lang['stream']['4']?></option>
+  <option Value='lautfm' <?=$status5?>><?=$lang['stream']['5']?></option>
+  <option Value='webphp' <?=$status6?>><?=$lang['stream']['6']?></option>
+  <option Value='custom' <?=$status7?>><?=$lang['stream']['7']?></option>
 </select>
 </td>
 </tr>
@@ -111,31 +106,31 @@ if($row['config_option_4']=='6'){$status6="selected";}
 </tr>
 -->
 
-<td>Stream Player:</td><td>
+<td><?=$lang['stream']['player']?></td><td>
 <?php if($row['config_option_12']=='Ja'){$status12="selected";}else{$status121="selected";}?>
 <select name="config_option_12" class="form-control">
-  <option value="Ja" <?=$status12?>>Active</option>
-  <option Value='Nein' <?=$status121?>>Deactive</option>
+  <option value="Ja" <?=$status12?>><?=$lang['global']['active']?></option>
+  <option Value='Nein' <?=$status121?>><?=$lang['global']['disable']?></option>
 </select>
 </td>
 </tr>
 
 <tr>
-<td>Stream IP:</td><td><input class="form-control" type="text" name="club_name" value="<?=$row['club_name']?>"></td>
+<td><?=$lang['stream']['ip']?></td><td><input class="form-control" type="text" name="club_name" value="<?=$row['club_name']?>"></td>
 </tr>
 <tr>
-<td>Stream Port:</td><td><input class="form-control" type="text" name="config_text" value="<?=$row['config_text']?>"></td>
+<td><?=$lang['stream']['port']?></td><td><input class="form-control" type="text" name="config_text" value="<?=$row['config_text']?>"></td>
 </tr>
 <tr>
-<td>Mount point:</td><td><input class="form-control" type="text" name="config_option_6" value="<?=$row['config_option_6']?>"></td>
+<td><?=$lang['stream']['mount']?></td><td><input class="form-control" type="text" name="config_option_6" value="<?=$row['config_option_6']?>"></td>
 </tr>
 
 <tr>
-<td>Hintergrund Transparents:</td><td>
+<td><?=$lang['global']['bgtype']?></td><td>
 <?php if($row['trans']=='Ja'){$trans7="selected";}else{$trans71="selected";}?>
 <select name="trans" class="form-control">
-  <option value="Ja" <?=$trans7?>>Active</option>
-  <option Value='Nein' <?=$trans71?>>Deactive</option>
+  <option value="Ja" <?=$trans7?>><?=$lang['global']['active']?></option>
+  <option Value='Nein' <?=$trans71?>><?=$lang['global']['disable']?></option>
 </select>
 </td>
 </tr>
@@ -143,7 +138,7 @@ if($row['config_option_4']=='6'){$status6="selected";}
 
 
 </table>
-<input class="btn btn-primary" type="submit" name="ssettings" value="Update Config"> 
+<input class="btn btn-primary" type="submit" name="ssettings" value="<?=$lang['global']['updateconf']?>"> 
 </form>
 
 </div>
@@ -174,7 +169,7 @@ if($row['config_option_4']=='6'){$status6="selected";}
 
 <div class="col-md-12 col-lg-6 col-xl-5">
 <div class="bgDarkk" style="overflow:hidden;">
-<h6 class="text-left ctitle">Einbau Code:<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['codeembede']?><small class="form-text text-muted"></small></h6>
 <?
 if($row['config_option_11']=='sonicpanel'){include('./module/stream/extra/sonicpanel.php');}
 else{include('./module/stream/extra/other.php');}

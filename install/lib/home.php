@@ -65,7 +65,15 @@ include('./settings.php');
                                     <input type="text" class="form_text" name="wsUri" value='<?=$wsUri?>' size="30">
                                 </td>
                             </tr>
-
+                            <tr>
+                                <td>&nbsp;Sprache:</td>
+                                <td>
+<select id="lang" name="lang">
+  <option value="de">Deutsch</option>
+  <option value="en">Englich</option>
+</select>
+                                </td>
+                            </tr>
                             <tr>
                                 <td colspan=2><p>MYSQL INFORMATION</p></td>
                             </tr>

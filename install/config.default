@@ -6,6 +6,7 @@ define( 'DB_HOST', '_DB_HOST_' );
 define( 'DB_CHARSET', 'utf8' );
 
 
+define('LANG', '_LANG_');
 define('WEB_DOMAIN', '_SCRIPT_URL_');
 define('support_dc', 'https://discord.gg/KBBkWrVJgu');
 define('wsUri', '_WSS_URL_'); // demo wss server bitte eigen nutzen

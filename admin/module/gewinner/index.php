@@ -6,7 +6,7 @@ iframe {
 
 <div class="col-md-12 col-lg-6 col-xl-7">
 <div class="bgDarkk pt-4 pb-5">
-<h6 class="text-left ctitle">Settings<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['settings']?><small class="form-text text-muted"></small></h6>
 <?
 $lz="18935";
 $lz_querys = "SELECT * FROM script_licencen WHERE config_id='$lz'";
@@ -46,20 +46,20 @@ socket.onopen = function(e) {
 <input type="hidden" name="lz" value="<?=$lz?>"/>
 <table style="width:100%;">
 <tr>
-<td>Bild URL:</td><td><input class="form-control" type="text" name="imgs" value="<?=$row['bg_bild']?>"></td>
+<td><?=$lang['gewinner']['img']?>:</td><td><input class="form-control" type="text" name="imgs" value="<?=$row['bg_bild']?>"></td>
 </tr>
 <tr>
-<td>Hintergrund Transparents:</td><td>
+<td><?=$lang['global']['bgtype']?></td><td>
 <?php if($row['trans']=='Ja'){$trans7="selected";}else{$trans71="selected";}?>
 <select name="trans" class="form-control">
-  <option value="Ja" <?=$trans7?>>Active</option>
-  <option Value='Nein' <?=$trans71?>>Deactive</option>
+  <option value="Ja" <?=$trans7?>><?=$lang['global']['active']?></option>
+  <option Value='Nein' <?=$trans71?>><?=$lang['global']['disable']?></option>
 </select>
 </td>
 </tr>
 
 </table>
-<input class="btn btn-primary" type="submit" name="ssettings" value="Update Config"> 
+<input class="btn btn-primary" type="submit" name="ssettings" value="<?=$lang['global']['updateconf']?>"> 
 </form>
 
 
@@ -68,7 +68,7 @@ socket.onopen = function(e) {
 
 
 <div class="bgDarkk pt-4 pb-5">
-<h6 class="text-left ctitle">Gewinner<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['gewinner']['title']?><small class="form-text text-muted"></small></h6>
 
 
 
@@ -116,9 +116,9 @@ socket.onopen = function(e) {
 <input type="hidden" name="lz" value="<?=$lz?>"/>
 <table style="width:100%;">
 <tr>
-<td>SC Userid:</td>
-<td>Gewinn:</td>
-<td>Spile:</td>
+<td><?=$lang['gewinner']['userid']?>:</td>
+<td><?=$lang['gewinner']['win']?>:</td>
+<td><?=$lang['gewinner']['game']?>:</td>
 <td></td>
 
 </tr>
@@ -126,7 +126,7 @@ socket.onopen = function(e) {
 <td><input class="form-control" type="text" name="scuserid" value=""></td>
 <td><input class="form-control" type="text" name="gewinn" value=""></td>
 <td><input class="form-control" type="text" name="game" value=""></td>
-<td><input class="btn btn-primary" type="submit" name="gewonnen" value="User Eintragen"> 
+<td><input class="btn btn-primary" type="submit" name="gewonnen" value="<?=$lang['gewinner']['add']?>"> 
 </td>
 </tr>
 
@@ -153,9 +153,9 @@ socket.onopen = function(e) {
 <table id="table_id"  style="width: 100%;" class="display">
 <thead>
 <tr>
-<td><b>Username</b></td>
-<td><b>Gewonnen</b></td>
-<td><b>Spiel</b></td>
+<td><b><?=$lang['global']['username']?></b></td>
+<td><b><?=$lang['gewinner']['win']?></b></td>
+<td><b><?=$lang['gewinner']['game']?></b></td>
 <td><b></b></td>
 </tr>
 </thead>
@@ -177,7 +177,7 @@ $rows = mysqli_fetch_assoc($results);
 <td><form action="" method="post">
 <input type="hidden" name="lz" value="<?=$lz?>"/>
 <input type="hidden" name="uid" value="<?=$row['id']?>"/>
-<input class="btn btn-primary" type="submit" name="del" value="Remove">
+<input class="btn btn-primary" type="submit" name="del" value="<?=$lang['global']['del']?>">
 </form>
 </td>
 </tr>
@@ -193,13 +193,8 @@ $rows = mysqli_fetch_assoc($results);
 
 <div class="col-md-12 col-lg-6 col-xl-5">
 <div class="bgDarkk" style="overflow:hidden;">
-<h6 class="text-left ctitle">Einbau Code:<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['codeembede']?><small class="form-text text-muted"></small></h6>
 <p>
-Script: Web browser<br>
-scale: 1.00<br>
-width: 800<br>
-hight: 628 
-<br>
  <textarea style="width: 100%; height: 80px;">
 <?echo WEB_DOMAIN?>extern/gewinner.php?mid=[Memberid]&uname=[membername]
 </textarea>
@@ -208,7 +203,7 @@ hight: 628
 </div>
 
 <div class="bgDarkk" style="overflow:hidden;">
-<h6 class="text-left ctitle">DEMO:<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['showscript']?><small class="form-text text-muted"></small></h6>
 <p>
 <iframe src="<?echo WEB_DOMAIN?>extern/gewinner.php?mid=95687&uname=Doc_Hardi_DH" style="width: 100%; height: 628px;" scrolling="no" allowTransparency="true" border="0"></iframe>
 </p>

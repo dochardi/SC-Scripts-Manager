@@ -63,7 +63,6 @@ include('config.php');
 </div>
 </div>
 <div id="wrapper">
-
 <div id="sidebar-wrapper">
 <div class="sidebar-inner">
 <div class="brand-box d-flex justify-content-start align-items-center">
@@ -84,6 +83,10 @@ include("./app/nav.php");
 
 <?php
 //print_r($user);
+if(demo=="1")
+{
+include("./app/demo.php");
+}
 include("./app/nofiy.php");
 ?>
 
@@ -93,7 +96,7 @@ include("./app/nofiy.php");
 <div class="col-md-6 d-flex align-items-center">
 </div>
 <div class="col-md-6 d-flex align-items-center justify-content-end">
-<div class="logout-btn"> <span></span> <a href="/index.php?action=logout"> Logout </a></div>
+<div class="logout-btn"> <span></span> <a href="/index.php?action=logout"><?=$lang['global']['logout']?></a></div>
 </div>
 </div>
 </div>

@@ -43,7 +43,7 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
-<center><h1>Willkommen <?=$_GET['uname']?></h1><br>
+<center><h1><?=$lz_data['club_name']?> <?=$_GET['uname']?></h1><br>
 <img src="<?=WEB_DOMAIN?>/api/scbild.php?id=<?=$_GET['mid']?>" width="300" height="400">
 <br><br>
 <h1><?=$lz_data['config_text']?></h1>

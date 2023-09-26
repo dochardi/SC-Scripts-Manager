@@ -6,7 +6,7 @@ iframe {
 
 <div class="col-md-12 col-lg-6 col-xl-7">
 <div class="bgDarkk pt-4 pb-5">
-<h6 class="text-left ctitle">Settings<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['settings']?><small class="form-text text-muted"></small></h6>
 
 <?php
 $lz="18936";
@@ -35,14 +35,6 @@ $trans=$_POST['trans'];
 
 mysqli_query($adonconn,"UPDATE script_licencen SET trans='$trans', config_option_12='$config_option_12',config_option_11='$config_option_11',name='$scriptname',club_name='$club_name',config_text='$config_text',config_option_3='$config_option_3',config_option_4='$config_option_4',config_option_5='$config_option_5',config_option_6='$config_option_6',config_option_7='$config_option_7',config_option_8='$config_option_8',config_option_9='$config_option_9',config_option_10='$config_option_10' WHERE config_id='$lzs'");
 ?>
-<script>
-let socket = new WebSocket("wss://websocket.proxy.dwe-gruppe.eu/rjhewzrhi3w0ztr8g3uhu9/resiver");
-
-socket.onopen = function(e) {
-  socket.send("reload|<?=$_POST['lz']?>");
-  socket.close();
-};
-</script>
 <form method="POST" id="myform">
   <input type="text" name="lz" value="<?=$lz?>">
   <input type="submit">
@@ -58,29 +50,29 @@ socket.onopen = function(e) {
 <input type="hidden" name="lz" value="<?=$lz?>"/>
 <table style="width:100%;">
 <tr>
-<td>club Name:</td><td><input class="form-control" type="text" name="club_name" value="<?=$row['club_name']?>"></td>
+<td><?=$lang['welcome']['clubname']?></td><td><input class="form-control" type="text" name="club_name" value="<?=$row['club_name']?>"></td>
 </tr>
 <tr>
-<td>Willkommen Text:</td><td><input class="form-control" type="text" name="config_text" value="<?=$row['config_text']?>"></td>
+<td><?=$lang['welcome']['text']?></td><td><input class="form-control" type="text" name="config_text" value="<?=$row['config_text']?>"></td>
 </tr>
 <tr>
-<td>Homepage URL:</td><td><input class="form-control" type="text" name="config_option_3" value="<?=$row['config_option_3']?>"></td>
+<td><?=$lang['scpage']['hp_tab']?></td><td><input class="form-control" type="text" name="config_option_8" value="<?=$row['config_option_8']?>"></td>
 </tr>
 <tr>
-<td>Hompage Tab Name:</td><td><input class="form-control" type="text" name="config_option_8" value="<?=$row['config_option_8']?>"></td>
+<td><?=$lang['scpage']['hp_url']?></td><td><input class="form-control" type="text" name="config_option_3" value="<?=$row['config_option_3']?>"></td>
 </tr>
 <tr>
-<td>Sendeplane Tab Name:</td><td><input class="form-control" type="text" name="config_option_10" value="<?=$row['config_option_10']?>"></td>
+<td><?=$lang['scpage']['hp_tab_2']?></td><td><input class="form-control" type="text" name="config_option_10" value="<?=$row['config_option_10']?>"></td>
 </tr>
 <tr>
-<td>Sendeplane url:</td><td><input class="form-control" type="text" name="config_option_9" value="<?=$row['config_option_9']?>"></td>
+<td><?=$lang['scpage']['hp_url_2']?>:</td><td><input class="form-control" type="text" name="config_option_9" value="<?=$row['config_option_9']?>"></td>
 </tr>
 <tr>
-<td>Hintergrund Transparents:</td><td>
+<td><?=$lang['global']['bgtype']?></td><td>
 <?php if($row['trans']=='Ja'){$trans7="selected";}else{$trans71="selected";}?>
 <select name="trans" class="form-control">
-  <option value="Ja" <?=$trans7?>>Active</option>
-  <option Value='Nein' <?=$trans71?>>Deactive</option>
+  <option value="Ja" <?=$trans7?>><?=$lang['global']['active']?></option>
+  <option Value='Nein' <?=$trans71?>><?=$lang['global']['disable']?></option>
 </select>
 </td>
 </tr>
@@ -88,7 +80,7 @@ socket.onopen = function(e) {
 
 
 </table>
-<input class="btn btn-primary" type="submit" name="ssettings" value="Update Config"> 
+<input class="btn btn-primary" type="submit" name="ssettings" value="<?=$lang['global']['updateconf']?>"> 
 </form>
 
 </div>
@@ -119,13 +111,8 @@ socket.onopen = function(e) {
 
 <div class="col-md-12 col-lg-6 col-xl-5">
 <div class="bgDarkk" style="overflow:hidden;">
-<h6 class="text-left ctitle">Einbau Code:<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['codeembede']?><small class="form-text text-muted"></small></h6>
 <p>
-Script: Web browser<br>
-scale: 1.00<br>
-width: 800<br>
-hight: 628 
-<br>
 <textarea style="width: 100%; height: 80px;">
 <?echo WEB_DOMAIN?>extern/scpage.php?mid=[Memberid]&uname=[membername]</textarea>
 <br>
@@ -133,7 +120,7 @@ hight: 628
 </div>
 
 <div class="bgDarkk" style="overflow:hidden;">
-<h6 class="text-left ctitle">DEMO:<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['showscript']?><small class="form-text text-muted"></small></h6>
 <p>
 <iframe src="<?echo WEB_DOMAIN?>extern/scpage.php?mid=95687&uname=Doc_Hardi_DH" style="width: 100%; height: 628px;" scrolling="no" allowTransparency="true" border="0"></iframe>
 </p>

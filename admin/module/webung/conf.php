@@ -42,15 +42,15 @@ socket.onopen = function(e) {
 <input type="hidden" name="lz" value="<?=$lz?>"/>
 <table style="width:100%;">
 <tr>
-<td>Bild URL:</td>
-<td>Link URL:</td>
+<td><?=$lang['werbung']['img']?></td>
+<td><?=$lang['werbung']['url']?></td>
 <td></td>
 
 </tr>
 <tr>
 <td><input class="form-control" type="text" name="scuserid" value=""></td>
 <td><input class="form-control" type="text" name="gewinn" value=""></td>
-<td><input class="btn btn-primary" type="submit" name="gewonnen" value="Neu Werbung Eintragen"> 
+<td><input class="btn btn-primary" type="submit" name="gewonnen" value="<?=$lang['werbung']['send']?>"> 
 </td>
 </tr>
 
@@ -83,8 +83,8 @@ $(document).ready( function () {
 <table id="table_id" class="display" style="width:100%;">
 <thead>
 <tr>
-<td><b>Bild Url</b></td>
-<td><b>Homepage</b></td>
+<td><b><?=$lang['werbung']['img']?></b></td>
+<td><b><?=$lang['werbung']['url']?></b></td>
 <td><b></b></td>
 </tr>
 </thead>
@@ -100,7 +100,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <td><form action="" method="post">
 <input type="hidden" name="lz" value="<?=$_POST['lz']?>"/>
 <input type="hidden" name="uid" value="<?=$row['id']?>"/>
-<input class="btn btn-primary" type="submit" name="del" value="Remove">
+<input class="btn btn-primary" type="submit" name="del" value="<?=$lang['global']['del']?>">
 </form>
 </td>
 </tr>

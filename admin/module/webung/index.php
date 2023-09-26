@@ -6,7 +6,7 @@ iframe {
 
 <div class="col-md-12 col-lg-6 col-xl-7">
 <div class="bgDarkk pt-4 pb-5">
-<h6 class="text-left ctitle">Settings<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['settings']?><small class="form-text text-muted"></small></h6>
 
 <?php
 $lz="18956";
@@ -45,16 +45,16 @@ socket.onopen = function(e) {
 <input type="hidden" name="lz" value="<?=$lz?>"/>
 <table style="width:100%;">
 <tr>
-<td>Hintergrund Transparents:</td><td>
+<td><?=$lang['global']['bgtype']?></td><td>
 <?php if($lz_data['trans']=='Ja'){$trans7="selected";}else{$trans71="selected";}?>
 <select name="trans" class="form-control">
-  <option value="Ja" <?=$trans7?>>Active</option>
-  <option Value='Nein' <?=$trans71?>>Deactive</option>
+  <option value="Ja" <?=$trans7?>><?=$lang['global']['active']?></option>
+  <option Value='Nein' <?=$trans71?>><?=$lang['global']['disable']?></option>
 </select>
 </td>
 </tr>
 </table>
-<input class="btn btn-primary" type="submit" name="ssettings" value="Update Config"> 
+<input class="btn btn-primary" type="submit" name="ssettings" value="<?=$lang['global']['updateconf']?>"> 
 </form>
 
 </div>
@@ -62,7 +62,7 @@ socket.onopen = function(e) {
 
 
 <div class="bgDarkk pt-4 pb-5">
-<h6 class="text-left ctitle">Data<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['extras']?><small class="form-text text-muted"></small></h6>
 <?include("./module/webung/conf.php");?>
 </div>
 </div>
@@ -93,14 +93,14 @@ socket.onopen = function(e) {
 
 <div class="col-md-12 col-lg-6 col-xl-5">
 <div class="bgDarkk" style="overflow:hidden;">
-<h6 class="text-left ctitle">Einbau Code:<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['codeembede']?><small class="form-text text-muted"></small></h6>
 <p>
-URL: <?echo WEB_DOMAIN?>extern/werbung.php
+<?=$lang['global']['url']?> <?echo WEB_DOMAIN?>extern/werbung.php
 </p>
 </div>
 
 <div class="bgDarkk" style="overflow:hidden;">
-<h6 class="text-left ctitle">DEMO:<small class="form-text text-muted"></small></h6>
+<h6 class="text-left ctitle"><?=$lang['global']['showscript']?><small class="form-text text-muted"></small></h6>
 <p>
 <iframe src="<?echo WEB_DOMAIN?>extern/werbung.php" style="width: 100%; height: 512px;" scrolling="no" allowTransparency="true" border="0"></iframe>
 </p>

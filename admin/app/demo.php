@@ -1,22 +1,10 @@
-<?
-$local_version=get_setings('version');
-$extern_version = file_get_contents('https://git.dochardi.de/script/sc/version.txt');
-if($local_version==$extern_version)
-{
-}
-else
-{
-?>
 <div class="row"><div class="col-xl-12">
-<div class="flag note warning">
+<div class="flag note info">
 <div class="flag__image icon"><i class="fa fa-info"></i></div>
-<div class="body text"><b><?=$lang['error']['update']?></b>
+<div class="body text"><?=$lang['error']['demo']?>
 </div>
 </div>
 </div> </div>
-<?
-}
-?>
 
 <style>
     .ctitle {
