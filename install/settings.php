@@ -1,9 +1,0 @@
-<?
-$wsUri="wss://node.dochardi.de:8000/demo/sc";
-$admin_password=generateRandomPassword(17);
-$database_host="localhost";
-$database_name="";
-$database_username="";
-$database_password="";
-$admin_username="Admin";
-?>
